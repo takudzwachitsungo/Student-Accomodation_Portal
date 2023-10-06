@@ -160,13 +160,13 @@ class ProductCard extends StatelessWidget {
                               bottomLeft: Radius.circular(10)),
                           color: Color.fromRGBO(224, 69, 10, 1),
                         ),
-                        child: Text(
+                        /*child: Text(
                           '\$${product.price}',
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 18,
                               fontWeight: FontWeight.bold),
-                        ),
+                        ),*/
                       ),
                     ),
                   ],
@@ -174,7 +174,7 @@ class ProductCard extends StatelessWidget {
               ],
             ),
           ),
-          Positioned(
+          /*Positioned(
             child: Hero(
               tag: product.image,
               child: Image.asset(
@@ -184,7 +184,7 @@ class ProductCard extends StatelessWidget {
                 fit: BoxFit.contain,
               ),
             ),
-          ),
+          ),*/
         ],
       ),
     );

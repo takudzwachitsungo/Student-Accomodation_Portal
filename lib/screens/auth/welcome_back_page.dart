@@ -17,15 +17,15 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
     Widget company_logo = Center(
       child: CircleAvatar(
         backgroundColor: Colors.transparent,
-        radius: 80.0,
+        radius: 50.0,
         child: ClipOval(
           child: Image.asset(
             'assets/transithomes-1.png',
-            width:
+            /* width:
                 150.0, // Adjust the width to fit the circle's diameter (2 * maxRadius)
             height:
                 150.0, // Adjust the height to fit the circle's diameter (2 * maxRadius)
-            fit: BoxFit.cover,
+            fit: BoxFit.cover,*/
           ),
         ),
       ),

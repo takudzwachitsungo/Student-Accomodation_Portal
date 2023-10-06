@@ -113,7 +113,7 @@ class _ProductPageState extends State<ProductPage> {
                         width: 90,
                         height: 40,
                         decoration: BoxDecoration(
-                          color: Color.fromRGBO(250, 249, 248, 1),
+                          color: Color.fromRGBO(253, 192, 84, 1),
                           borderRadius: BorderRadius.circular(4.0),
                           border:
                               Border.all(color: Color(0xFFFFFFFF), width: 0.5),

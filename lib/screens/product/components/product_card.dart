@@ -15,7 +15,7 @@ class ProductCard extends StatelessWidget {
             width: MediaQuery.of(context).size.width / 2 - 29,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(10)),
-                color: Color(0xfffbd085).withOpacity(0.46)),
+                color: Color.fromRGBO(251, 208, 133, 1).withOpacity(0.46)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
@@ -25,9 +25,9 @@ class ProductCard extends StatelessWidget {
                     padding: EdgeInsets.all(16.0),
                     width: MediaQuery.of(context).size.width / 2 - 64,
                     height: MediaQuery.of(context).size.width / 2 - 64,
-                    child: Image.asset(
+                    /*child: Image.asset(
                       product.image,
-                    ),
+                    ),*/
                   ),
                 ),
                 Flexible(

@@ -1,10 +1,7 @@
-import 'package:ecommerce_int2/models/category.dart';
 import 'package:flutter/material.dart';
-import 'category_card.dart';
-import 'recommended_list.dart';
 
 class TabView extends StatelessWidget {
-  List<Category> categories = [
+  /*List<Category> categories = [
     Category(
       Color(0xffFCE183),
       Color(0xffF68D7F),
@@ -41,7 +38,7 @@ class TabView extends StatelessWidget {
       'Appliances',
       'assets/jeans_5.png',
     ),
-  ];
+  ];*/
 
   final TabController tabController;
 
@@ -52,7 +49,9 @@ class TabView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print(MediaQuery.of(context).size.height / 9);
-    return TabBarView(
+    return Scaffold();
+  }
+  /*return TabBarView(
         physics: NeverScrollableScrollPhysics(),
         controller: tabController,
         children: <Widget>[
@@ -102,5 +101,5 @@ class TabView extends StatelessWidget {
             Flexible(child: RecommendedList())
           ]),
         ]);
-  }
+  }*/
 }
