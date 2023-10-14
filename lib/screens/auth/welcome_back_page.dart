@@ -1,3 +1,5 @@
+import 'package:ecommerce_int2/screens/auth/confirm_otp_page.dart';
+import 'package:ecommerce_int2/screens/auth/forgot_password_page.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_int2/screens/intro_page.dart';
 
@@ -15,17 +17,13 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
   @override
   Widget build(BuildContext context) {
     Widget company_logo = Center(
-      child: CircleAvatar(
-        backgroundColor: Colors.transparent,
-        radius: 50.0,
-        child: ClipOval(
-          child: Image.asset(
-            'assets/transithomes-1.png',
-            /* width:
-                150.0, // Adjust the width to fit the circle's diameter (2 * maxRadius)
-            height:
-                150.0, // Adjust the height to fit the circle's diameter (2 * maxRadius)
-            fit: BoxFit.cover,*/
+      child: Padding(
+        padding: const EdgeInsets.all(16.0), // Adjust padding as needed
+        child: CircleAvatar(
+          backgroundColor: Colors.transparent,
+          radius: 70.0,
+          child: ClipOval(
+            child: Image.asset('assets/transithomes-1.png'),
           ),
         ),
       ),
@@ -139,16 +137,21 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text(
-            'Forgot your password? ',
-            style: TextStyle(
-              fontStyle: FontStyle.italic,
-              color: Color.fromRGBO(255, 255, 255, 0.5),
-              fontSize: 14.0,
+          InkWell(
+            onTap: () => Navigator.of(context)
+                .push(MaterialPageRoute(builder: (_) => ForgotPasswordPage())),
+            child: Text(
+              'Forgot your password? ',
+              style: TextStyle(
+                fontStyle: FontStyle.italic,
+                color: Color.fromRGBO(248, 230, 237, 0.486),
+                fontSize: 12.0,
+              ),
             ),
           ),
           InkWell(
-            onTap: () {},
+            onTap: () => Navigator.of(context)
+                .push(MaterialPageRoute(builder: (_) => ConfirmOtpPage())),
             child: Text(
               'Reset password',
               style: TextStyle(

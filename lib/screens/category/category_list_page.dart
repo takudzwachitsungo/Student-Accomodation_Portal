@@ -13,24 +13,24 @@ class CategoryListPage extends StatefulWidget {
 class _CategoryListPageState extends State<CategoryListPage> {
   List<Category> categories = [
     Category(
-      Color(0xffFCE183),
-      Color(0xffF68D7F),
-      'Gadgets',
+      Color(0xffAF2D68),
+      Color(0xff632376),
+      'Montrose',
       'assets/jeans_5.png',
     ),
     Category(
       Color(0xffF749A2),
       Color(0xffFF7375),
-      'Clothes',
+      'Mount Pleaseant.....18',
       'assets/jeans_5.png',
     ),
     Category(
       Color(0xff00E9DA),
       Color(0xff5189EA),
-      'Fashion',
+      'Mount Pleaseant Heights',
       'assets/jeans_5.png',
     ),
-    Category(
+    /*Category(
       Color(0xffAF2D68),
       Color(0xff632376),
       'Home',
@@ -47,7 +47,7 @@ class _CategoryListPageState extends State<CategoryListPage> {
       Color(0xff668CEA),
       'Appliances',
       'assets/jeans_5.png',
-    ),
+    ),*/
   ];
 
   List<Category> searchResults = [];

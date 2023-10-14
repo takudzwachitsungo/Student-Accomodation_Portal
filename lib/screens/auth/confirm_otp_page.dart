@@ -149,7 +149,7 @@ class _ConfirmOtpPageState extends State<ConfirmOtpPage> {
       child: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/background.jpg'), fit: BoxFit.cover)),
+                image: AssetImage('assets/bg-login.jpg'), fit: BoxFit.cover)),
         child: Container(
           decoration: BoxDecoration(color: transparentYellow),
           child: Scaffold(

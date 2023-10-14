@@ -19,7 +19,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
     Widget background = Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/background.png'), fit: BoxFit.cover),
+            image: AssetImage('assets/bg-login.jpg'), fit: BoxFit.cover),
       ),
       foregroundDecoration: BoxDecoration(color: transparentYellow),
     );

@@ -3,11 +3,14 @@ import 'package:ecommerce_int2/models/product.dart';
 import 'package:ecommerce_int2/screens/product/product_page.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter/material.dart';
+import 'package:ecommerce_int2/models/category_item.dart';
 
 class RecommendedList extends StatelessWidget {
   List<Product> products = [
-    Product('assets/kitchen-1.jpg', 'Bag', 'Beautiful bag', 2.33),
-    Product('assets/bed-2.jpg', 'Cap', 'Cap with beautiful design', 10),
+    Product(
+        'assets/kitchen-1.jpg', 'Weekly Dose', /*'Bag'*/ 'Beautiful bag', 2.33),
+    Product('assets/bed-2.jpg', 'Best News' /*'Cap'*/,
+        'Cap with beautiful design', 10),
     Product('assets/jeans_1.png', 'Jeans', 'Jeans for you', 20),
     Product('assets/womanshoe_3.png', 'Woman Shoes',
         'Shoes with special discount', 30),
@@ -59,20 +62,44 @@ class RecommendedList extends StatelessWidget {
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(
                       builder: (_) => ProductPage(product: products[index]))),
                   child: Container(
-                      decoration: BoxDecoration(
-                        gradient: RadialGradient(
-                            colors: [
-                              Colors.grey.withOpacity(0.3),
-                              Colors.grey.withOpacity(0.7),
-                            ],
-                            center: Alignment(0, 0),
-                            radius: 0.6,
-                            focal: Alignment(0, 0),
-                            focalRadius: 0.1),
+                    decoration: BoxDecoration(
+                      gradient: RadialGradient(
+                          colors: [
+                            const Color.fromARGB(255, 134, 59, 59)
+                                .withOpacity(0.3),
+                            const Color.fromARGB(255, 63, 24, 24)
+                                .withOpacity(0.7),
+                          ],
+                          center: Alignment(0, 0),
+                          radius: 0.6,
+                          focal: Alignment(0, 0),
+                          focalRadius: 0.1),
+                    ),
+
+                    //new code insertion
+                    padding: EdgeInsets.all(8.0),
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.message, // Replace with the appropriate icon
+                            color: Colors.white,
+                          ),
+                          SizedBox(height: 8.0),
+                          Text(
+                            // products.name,
+                            products[index].name,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
                       ),
-                      child: Hero(
+                    ),
+                    /*child: Hero(
                           tag: products[index].image,
-                          child: Image.asset(products[index].image))),
+                          child: Image.asset(products[index].image))*/
+                  ),
                 ),
               ),
               mainAxisSpacing: 4.0,
