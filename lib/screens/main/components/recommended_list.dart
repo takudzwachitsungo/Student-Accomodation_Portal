@@ -7,16 +7,19 @@ import 'package:ecommerce_int2/models/category_item.dart';
 
 class RecommendedList extends StatelessWidget {
   List<Product> products = [
-    Product(
-        'assets/kitchen-1.jpg', 'Weekly Dose', /*'Bag'*/ 'Beautiful bag', 2.33),
-    Product('assets/bed-2.jpg', 'Best News' /*'Cap'*/,
-        'Cap with beautiful design', 10),
-    Product('assets/jeans_1.png', 'Jeans', 'Jeans for you', 20),
-    Product('assets/womanshoe_3.png', 'Woman Shoes',
-        'Shoes with special discount', 30),
-    Product('assets/bag_10.png', 'Bag Express', 'Bag for your shops', 40),
+    Product('assets/kitchen-1.jpg', 'Weekly Dose', /*'Bag'*/ 'Beautiful bag',
+        2.33, Icons.article),
+    Product('assets/bed-2.jpg', 'Bookings' /*'Cap'*/,
+        'Cap with beautiful design', 10, Icons.hotel),
+    Product('assets/jeans_1.png', /*'Cap'*/ 'Lost and Found', 'Jeans for you',
+        20, Icons.widgets),
+    Product('assets/womanshoe_3.png', 'Cart' /*'Woman Shoes'*/,
+        'Shoes with special discount', 30, Icons.shopping_cart),
+    Product('assets/bag_10.png', 'Payment',
+        /*'Bag Express'*/ 'Bag for your shops', 40, Icons.payment),
     //Product('assets/jeans_3.png', 'Jeans', 'Beautiful Jeans', 102.33),
-    Product('assets/ring_1.png', 'Silver Ring', 'Description', 52.33),
+    Product('assets/ring_1.png', 'Silver Ring', 'Description', 52.33,
+        Icons.article),
     //Product('assets/shoeman_7.png', 'Shoes', 'Description', 62.33),
     //Product('assets/headphone_9.png', 'Headphones', 'Description', 72.33),
   ];
@@ -83,7 +86,8 @@ class RecommendedList extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
-                            Icons.message, // Replace with the appropriate icon
+                            products[index]
+                                .icon, // Replace with the appropriate icon
                             color: Colors.white,
                           ),
                           SizedBox(height: 8.0),
