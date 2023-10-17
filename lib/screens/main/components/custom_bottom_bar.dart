@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomBottomBar extends StatelessWidget {
   final TabController controller;
@@ -14,22 +13,19 @@ class CustomBottomBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           IconButton(
-            icon: SvgPicture.asset(
-              'assets/icons/home_icon.svg',
-              fit: BoxFit.fitWidth,
-            ),
+            icon: Image.asset('assets/home-main.png'),
             onPressed: () {
               controller.animateTo(0);
             },
           ),
           IconButton(
-            icon: Image.asset('assets/icons/category_icon.png'),
+            icon: Image.asset('assets/category-main.png'),
             onPressed: () {
               controller.animateTo(1);
             },
           ),
           IconButton(
-            icon: SvgPicture.asset('assets/icons/cart_icon.svg'),
+            icon: Image.asset('assets/checkout-main.png'),
             onPressed: () {
               controller.animateTo(2);
             },
@@ -41,7 +37,7 @@ class CustomBottomBar extends StatelessWidget {
             },
           ),
           IconButton(
-            icon: Image.asset('assets/icons/profile_icon.png'),
+            icon: Image.asset('assets/profile-main.png'),
             onPressed: () {
               controller.animateTo(3);
             },

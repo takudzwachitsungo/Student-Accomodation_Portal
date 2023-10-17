@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ecommerce_int2/models/category.dart';
 
 import 'recommended_list.dart';
+import 'bookings.dart';
 import 'category_card.dart';
-
 
 class TabView extends StatelessWidget {
   List<Category> categories = [
@@ -55,8 +55,8 @@ class TabView extends StatelessWidget {
   Widget build(BuildContext context) {
     print(MediaQuery.of(context).size.height / 9);
     //return Scaffold();
-  
-  return TabBarView(
+
+    return TabBarView(
         physics: NeverScrollableScrollPhysics(),
         controller: tabController,
         children: <Widget>[
@@ -64,7 +64,7 @@ class TabView extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Container(
+                /* Container(
                     margin: EdgeInsets.all(8.0),
                     height: MediaQuery.of(context).size.height / 9,
                     width: MediaQuery.of(context).size.width,
@@ -73,7 +73,7 @@ class TabView extends StatelessWidget {
                         itemCount: categories.length,
                         itemBuilder: (_, index) => CategoryCard(
                               category: categories[index],
-                            ))),
+                            ))),*/
                 SizedBox(
                   height: 16.0,
                 ),
@@ -85,7 +85,7 @@ class TabView extends StatelessWidget {
             SizedBox(
               height: 16.0,
             ),
-            Flexible(child: RecommendedList())
+            Flexible(child: BookingsList())
           ]),
           Column(children: <Widget>[
             SizedBox(
@@ -108,4 +108,3 @@ class TabView extends StatelessWidget {
         ]);
   }
 }
-

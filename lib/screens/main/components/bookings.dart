@@ -4,14 +4,14 @@ import 'package:ecommerce_int2/screens/product/product_page.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter/material.dart';
 
-class RecommendedList extends StatelessWidget {
+class BookingsList extends StatelessWidget {
   List<Product> products = [
-    Product('assets/kitchen-1.jpg', 'Weekly Dose', /*'Bag'*/ 'Beautiful bag',
-        2.33, Icons.article),
-    Product('assets/bed-2.jpg', 'Bookings' /*'Cap'*/,
+    Product('assets/kitchen-1.jpg', 'Add Hostel', /*'Bag'*/ 'First Floor', 2.33,
+        Icons.add),
+    Product('assets/bed-2.jpg', 'Room Allocation' /*'Cap'*/,
         'Cap with beautiful design', 10, Icons.hotel),
-    Product('assets/jeans_1.png', /*'Cap'*/ 'Lost and Found', 'Jeans for you',
-        20, Icons.widgets),
+    Product('assets/jeans_1.png', /*'Cap'*/ 'Room Checking', 'Jeans for you',
+        20, Icons.check),
     Product('assets/womanshoe_3.png', 'Cart' /*'Woman Shoes'*/,
         'Shoes with special discount', 30, Icons.shopping_cart),
     Product('assets/bag_10.png', 'Payment',
@@ -41,7 +41,7 @@ class RecommendedList extends StatelessWidget {
               ),
               Center(
                   child: Text(
-                'Recommended',
+                'Bookings',
                 style: TextStyle(
                     color: darkGrey,
                     fontSize: 16.0,
