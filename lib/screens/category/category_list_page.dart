@@ -84,7 +84,8 @@ class _CategoryListPageState extends State<CategoryListPage> {
               ),
             ),
             Container(
-              padding: EdgeInsets.only(left: 16.0),
+              //padding: EdgeInsets.only(left: 16.0),
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(5)),
                 color: Colors.white,

@@ -1,5 +1,6 @@
 import 'package:ecommerce_int2/screens/auth/confirm_otp_page.dart';
 import 'package:ecommerce_int2/screens/auth/forgot_password_page.dart';
+import 'register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_int2/screens/intro_page.dart';
 
@@ -18,12 +19,16 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
   Widget build(BuildContext context) {
     Widget company_logo = Center(
       child: Padding(
-        padding: const EdgeInsets.all(16.0), // Adjust padding as needed
+        padding: const EdgeInsets.all(20.0), // Adjust padding as needed
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 70.0,
           child: ClipOval(
-            child: Image.asset('assets/transithomes-1.png'),
+            child: Padding(
+              padding:
+                  const EdgeInsets.all(16.0), // Add padding outside the image
+              child: Image.asset('assets/transithomes-1.png'),
+            ),
           ),
         ),
       ),
@@ -151,9 +156,9 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
           ),
           InkWell(
             onTap: () => Navigator.of(context)
-                .push(MaterialPageRoute(builder: (_) => ConfirmOtpPage())),
+                .push(MaterialPageRoute(builder: (_) => RegisterPage())),
             child: Text(
-              'Reset password',
+              'Register',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,

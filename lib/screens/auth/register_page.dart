@@ -152,7 +152,7 @@ class _RegisterPageState extends State<RegisterPage> {
           Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('assets/bg-login.jpg'),
+                    image: AssetImage('assets/bg-wallpaper.jpg'),
                     fit: BoxFit.cover)),
           ),
           Container(

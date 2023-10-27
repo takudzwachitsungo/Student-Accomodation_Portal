@@ -117,7 +117,8 @@ class ProductCard extends StatelessWidget {
             width: width,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(24)),
-              image: DecorationImage(
+              color: Colors.white,
+              /*image: DecorationImage(
                 image: AssetImage(
                     'assets/product-bg.png'), // Replace with your image path
                 fit: BoxFit.cover,
@@ -126,7 +127,7 @@ class ProductCard extends StatelessWidget {
                       .withOpacity(0.2), // Adjust the opacity of the image here
                   BlendMode.darken,
                 ),
-              ),
+              ),*/
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -174,17 +175,19 @@ class ProductCard extends StatelessWidget {
               ],
             ),
           ),
-          /*Positioned(
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
             child: Hero(
               tag: product.image,
               child: Image.asset(
                 product.image,
-                height: height / 1.7,
-                width: width / 1.4,
-                fit: BoxFit.contain,
+                fit: BoxFit.cover,
               ),
             ),
-          ),*/
+          ),
         ],
       ),
     );

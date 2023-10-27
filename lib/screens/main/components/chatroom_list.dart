@@ -4,18 +4,18 @@ import 'package:ecommerce_int2/screens/product/product_page.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter/material.dart';
 
-class BookingsList extends StatelessWidget {
+class ChatroomList extends StatelessWidget {
   List<Product> products = [
-    Product('assets/kitchen-1.jpg', 'Add Hostel', /*'Bag'*/ 'First Floor', 2.33,
-        Icons.add),
-    Product('assets/bed-2.jpg', 'Room Allocation' /*'Cap'*/,
-        'Cap with beautiful design', 10, Icons.hotel),
-    Product('assets/jeans_1.png', /*'Cap'*/ 'Room Checking', 'Jeans for you',
-        20, Icons.check),
-    Product('assets/womanshoe_3.png', 'Cart' /*'Woman Shoes'*/,
+    Product('assets/kitchen-1.jpg', 'Get Started', /*'Bag'*/ 'First Floor',
+        2.33, Icons.add),
+    Product('assets/bed-2.jpg', 'Join' /*'Cap'*/, 'Cap with beautiful design',
+        10, Icons.play_arrow),
+    Product('assets/jeans_1.png', /*'Cap'*/ 'Reporting', 'Jeans for you', 20,
+        Icons.report),
+    /*Product('assets/womanshoe_3.png', 'Cart' /*'Woman Shoes'*/,
         'Shoes with special discount', 30, Icons.shopping_cart),
-    Product('assets/bag_10.png', 'Payment',
-        /*'Bag Express'*/ 'Bag for your shops', 40, Icons.payment),
+    //Product('assets/bag_10.png', 'Payment',
+        /*'Bag Express'*/// 'Bag for your shops', 40, Icons.payment),
     Product('assets/jeans_3.png', 'Support', 'Beautiful Jeans', 102.33,
         Icons.payment),
     Product('assets/ring_1.png', 'Notifications', 'Description', 52.33,
@@ -23,7 +23,7 @@ class BookingsList extends StatelessWidget {
     Product('assets/shoeman_7.png', 'Feedback', 'Description', 62.33,
         Icons.feedback),
     Product(
-        'assets/headphone_9.png', 'Search', 'Description', 72.33, Icons.search),
+        'assets/headphone_9.png', 'Search', 'Description', 72.33, Icons.search),*/
   ];
 
   @override
@@ -39,12 +39,12 @@ class BookingsList extends StatelessWidget {
                 child: Container(
                   margin: const EdgeInsets.only(left: 16.0, right: 8.0),
                   width: 4,
-                  color: mediumYellow,
+                  color: Colors.purple,
                 ),
               ),
               Center(
                   child: Text(
-                'Bookings',
+                'Lets Chat',
                 style: TextStyle(
                     color: darkGrey,
                     fontSize: 16.0,

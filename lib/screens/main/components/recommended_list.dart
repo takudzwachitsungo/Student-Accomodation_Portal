@@ -17,8 +17,7 @@ class RecommendedList extends StatelessWidget {
     Product('assets/bag_10.png', 'Payment',
         /*'Bag Express'*/ 'Bag for your shops', 40, Icons.payment),
     //Product('assets/jeans_3.png', 'Jeans', 'Beautiful Jeans', 102.33),
-    Product('assets/ring_1.png', 'Silver Ring', 'Description', 52.33,
-        Icons.article),
+    Product('assets/ring_1.png', 'Events', 'Description', 52.33, Icons.article),
     //Product('assets/shoeman_7.png', 'Shoes', 'Description', 62.33),
     //Product('assets/headphone_9.png', 'Headphones', 'Description', 72.33),
   ];
