@@ -191,7 +191,7 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
               children: <Widget>[
                 Spacer(flex: 3),
                 company_logo,
-                Spacer(flex: 2),
+                Spacer(flex: 1),
                 welcomeBack,
                 Spacer(),
                 subTitle,

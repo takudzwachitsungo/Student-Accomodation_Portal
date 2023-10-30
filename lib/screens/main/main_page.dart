@@ -83,9 +83,9 @@ class _MainPageState extends State<MainPage>
                     products = [
                       Product('assets/product-bg.png', 'First-Headphones',
                           'First Test', 102.99),
-                      Product('assets/headphones_3.png', 'Under-First',
+                      Product('assets/product-bg.png', 'Under-First',
                           'Second Test', 55.99),
-                      Product('assets/headphones.png', 'Under---First',
+                      Product('assets/product-bg.png', 'Under---First',
                           'Third Test', 152.99),
                     ];
                   });

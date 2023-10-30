@@ -41,9 +41,9 @@ class _SplashScreenState extends State<SplashScreen>
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/background.jpg'), fit: BoxFit.cover)),
+              image: AssetImage('assets/bg-login-2.png'), fit: BoxFit.cover)),
       child: Container(
-        decoration: BoxDecoration(color: transparentYellow),
+        decoration: BoxDecoration(color: transparentBlue),
         child: SafeArea(
           child: new Scaffold(
             body: Column(
@@ -61,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen>
                         children: [
                           TextSpan(text: 'Powered by '),
                           TextSpan(
-                              text: 'int2.io',
+                              text: 'transithomes',
                               style: TextStyle(fontWeight: FontWeight.bold))
                         ]),
                   ),
