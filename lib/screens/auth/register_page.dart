@@ -9,20 +9,18 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  TextEditingController email =
-      TextEditingController(text: 'example@email.com');
-
-  TextEditingController password = TextEditingController(text: '12345678');
-
-  TextEditingController cmfPassword = TextEditingController(text: '12345678');
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController email = TextEditingController();
+  final TextEditingController password = TextEditingController();
+  final TextEditingController phoneno = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     Widget title = Text(
-      'Welcome to TransitHomes Student Accomodation',
+      'TransitHomes Student Accomodation',
       style: TextStyle(
           color: Colors.white,
-          fontSize: 28.0,
+          fontSize: 20.0,
           fontWeight: FontWeight.bold,
           shadows: [
             BoxShadow(
@@ -44,81 +42,131 @@ class _RegisterPageState extends State<RegisterPage> {
         ));
 
     Widget registerButton = Positioned(
-      left: MediaQuery.of(context).size.width / 4,
-      bottom: 40,
+      left: MediaQuery.of(context).size.width / 4, // Adjusted left position
+      bottom: 20.0, // Adjusted bottom position
       child: InkWell(
         onTap: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (_) => ForgotPasswordPage()));
+          //Navigator.of(context)
+          //   .push(MaterialPageRoute(builder: (_) => ForgotPasswordPage()));
+          if (_formKey.currentState?.validate() ?? false) {
+            // Form is valid, perform your actions here
+            // Access form fields using controllers (e.g., email.text, password.text)
+
+            String phoneNo = phoneno.text;
+            String Email = email.text;
+            String Password = password.text;
+
+            print('Email: $Email');
+            print('Password: $Password');
+            print('Phone Number: $phoneNo');
+          }
         },
         child: Container(
-          width: MediaQuery.of(context).size.width / 2,
+          width: MediaQuery.of(context).size.width / 2, // Adjusted width
           height: 80,
           child: Center(
-              child: new Text("Register",
-                  style: const TextStyle(
-                      color: const Color(0xfffefefe),
-                      fontWeight: FontWeight.w600,
-                      fontStyle: FontStyle.normal,
-                      fontSize: 20.0))),
+            child: Text(
+              "Register",
+              style: const TextStyle(
+                color: const Color(0xfffefefe),
+                fontWeight: FontWeight.w600,
+                fontStyle: FontStyle.normal,
+                fontSize: 20.0,
+              ),
+            ),
+          ),
           decoration: BoxDecoration(
-              gradient: mainButton,
-              boxShadow: [
-                BoxShadow(
-                  color: Color.fromRGBO(0, 0, 0, 0.16),
-                  offset: Offset(0, 5),
-                  blurRadius: 10.0,
-                )
-              ],
-              borderRadius: BorderRadius.circular(9.0)),
+            gradient: mainButton,
+            boxShadow: [
+              BoxShadow(
+                color: Color.fromRGBO(0, 0, 0, 0.16),
+                offset: Offset(0, 5),
+                blurRadius: 10.0,
+              ),
+            ],
+            borderRadius: BorderRadius.circular(9.0),
+          ),
         ),
       ),
     );
 
     Widget registerForm = Container(
       height: 300,
-      child: Stack(
-        children: <Widget>[
-          Container(
-            height: 220,
-            width: MediaQuery.of(context).size.width,
-            padding: const EdgeInsets.only(left: 32.0, right: 12.0),
-            decoration: BoxDecoration(
-                color: Color.fromRGBO(255, 255, 255, 0.8),
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    bottomLeft: Radius.circular(10))),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: TextField(
-                    controller: email,
-                    style: TextStyle(fontSize: 16.0),
+      child: Form(
+        key: _formKey,
+        child: Stack(
+          children: <Widget>[
+            Container(
+              height: 220,
+              width: MediaQuery.of(context).size.width,
+              padding: const EdgeInsets.only(left: 32.0, right: 12.0),
+              decoration: BoxDecoration(
+                  color: Color.fromRGBO(255, 255, 255, 0.8),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      bottomLeft: Radius.circular(10))),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: TextFormField(
+                      controller: email,
+                      style: TextStyle(fontSize: 16.0),
+                      decoration: InputDecoration(
+                        labelText: 'Email', // Add a label if needed
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your email';
+                        }
+                        // Add more validation if needed
+                        return null;
+                      },
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: TextField(
-                    controller: password,
-                    style: TextStyle(fontSize: 16.0),
-                    obscureText: true,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: TextFormField(
+                      controller: password,
+                      style: TextStyle(fontSize: 16.0),
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        labelText: 'Password', // Add a label if needed
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your password';
+                        }
+                        // Add more validation if needed
+                        return null;
+                      },
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: TextField(
-                    controller: cmfPassword,
-                    style: TextStyle(fontSize: 16.0),
-                    obscureText: true,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: TextFormField(
+                      controller: phoneno,
+                      style: TextStyle(fontSize: 16.0),
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        labelText: 'Phone Number', // Add a label if needed
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your phone number';
+                        }
+                        // Add more validation if needed
+                        return null;
+                      },
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          registerButton,
-        ],
+            registerButton,
+          ],
+        ),
       ),
     );
 

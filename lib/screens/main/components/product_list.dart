@@ -180,11 +180,14 @@ class ProductCard extends StatelessWidget {
             left: 0,
             right: 0,
             bottom: 0,
-            child: Hero(
-              tag: product.image,
-              child: Image.asset(
-                product.image,
-                fit: BoxFit.cover,
+            child: ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(24)),
+              child: Hero(
+                tag: product.image,
+                child: Image.asset(
+                  product.image,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),

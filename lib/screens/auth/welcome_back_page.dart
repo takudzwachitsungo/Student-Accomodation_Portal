@@ -1,4 +1,3 @@
-import 'package:ecommerce_int2/screens/auth/confirm_otp_page.dart';
 import 'package:ecommerce_int2/screens/auth/forgot_password_page.dart';
 import 'register_page.dart';
 import 'package:flutter/material.dart';

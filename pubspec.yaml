@@ -1,5 +1,5 @@
 name: ecommerce_int2
-description: It is about a complete ecommerce app for Android and iOS. 
+description: It is about a complete Student Portal app for Android and iOS. 
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -29,9 +29,12 @@ dependencies:
   pin_code_text_field: ^1.8.0
   http: ^1.1.0
   flutter_rating_bar: ^4.0.0
-  intl: ^0.18.0
+  intl: 0.17.0
   numberpicker: ^2.1.1
   flutter_svg: ^2.0.2
+  firebase_core: 2.22.0 
+  firebase_auth: ^4.13.0
+  get: ^4.6.6
 
 
 dev_dependencies:

@@ -4,7 +4,6 @@ import 'package:ecommerce_int2/models/category.dart';
 import 'recommended_list.dart';
 import 'bookings.dart';
 import 'chatroom_list.dart';
-import 'category_card.dart';
 
 class TabView extends StatelessWidget {
   List<Category> categories = [

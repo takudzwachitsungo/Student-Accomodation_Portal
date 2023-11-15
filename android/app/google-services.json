@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "403788255136",
+    "project_id": "student-accomodation-portal",
+    "storage_bucket": "student-accomodation-portal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403788255136:android:e89b40e5719311afc79ec5",
+        "android_client_info": {
+          "package_name": "com.example.flutter_ecommerce_template"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB96xmO9NmhVqGzUOzMtzlo6yL0HLBy_lg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
