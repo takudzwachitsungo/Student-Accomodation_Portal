@@ -1,7 +1,8 @@
 import 'package:ecommerce_int2/screens/auth/forgot_password_page.dart';
+import 'package:ecommerce_int2/screens/auth/login_controller.dart';
+import 'package:get/get.dart';
 import 'register_page.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce_int2/screens/intro_page.dart';
 
 class WelcomeBackPage extends StatefulWidget {
   @override
@@ -9,13 +10,11 @@ class WelcomeBackPage extends StatefulWidget {
 }
 
 class _WelcomeBackPageState extends State<WelcomeBackPage> {
-  TextEditingController email =
-      TextEditingController(text: 'example@email.com');
-
-  TextEditingController password = TextEditingController(text: '12345678');
-
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
+    final LoginController controller = Get.put(LoginController());
+
     Widget company_logo = Center(
       child: Padding(
         padding: const EdgeInsets.all(20.0), // Adjust padding as needed
@@ -60,11 +59,19 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
 
     Widget loginButton = Positioned(
       left: MediaQuery.of(context).size.width / 4,
-      bottom: 40,
+      bottom: 20,
       child: InkWell(
         onTap: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (_) => IntroPage()));
+          //Navigator.of(context)
+          //  .push(MaterialPageRoute(builder: (_) => IntroPage()));
+          if (_formKey.currentState!.validate()) {
+            /*LoginController.instance.login(
+                controller.email.text.trim(), controller.password.text.trim());
+            print('user created');*/
+
+            print("The email is ${controller.email}");
+            print("The password is ${controller.password}");
+          }
         },
         child: Container(
           width: MediaQuery.of(context).size.width / 2,
@@ -99,40 +106,64 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
 
     Widget loginForm = Container(
       height: 240,
-      child: Stack(
-        children: <Widget>[
-          Container(
-            height: 160,
-            width: MediaQuery.of(context).size.width,
-            padding: const EdgeInsets.only(left: 32.0, right: 12.0),
-            decoration: BoxDecoration(
-                color: Color.fromRGBO(255, 255, 255, 0.8),
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    bottomLeft: Radius.circular(10))),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: TextField(
-                    controller: email,
-                    style: TextStyle(fontSize: 16.0),
+      child: Form(
+        key: _formKey,
+        child: Stack(
+          children: <Widget>[
+            Container(
+              height: 160,
+              width: MediaQuery.of(context).size.width,
+              padding: const EdgeInsets.only(left: 32.0, right: 12.0),
+              decoration: BoxDecoration(
+                  color: Color.fromRGBO(255, 255, 255, 0.8),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      bottomLeft: Radius.circular(10))),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: TextFormField(
+                      controller: controller.email,
+                      style: TextStyle(fontSize: 16.0),
+                      decoration: const InputDecoration(
+                          prefixIcon: Icon(Icons.person),
+                          //labelText: 'Email',
+                          hintText: 'Email'),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your email';
+                        }
+                        // Add more validation if needed
+                        return null;
+                      },
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: TextField(
-                    controller: password,
-                    style: TextStyle(fontSize: 16.0),
-                    obscureText: true,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: TextFormField(
+                      controller: controller.password,
+                      style: TextStyle(fontSize: 16.0),
+                      obscureText: true,
+                      decoration: const InputDecoration(
+                          prefixIcon: Icon(Icons.fingerprint),
+                          hintText: 'Password'),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your password';
+                        }
+                        // Add more validation if needed
+                        return null;
+                      },
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          loginButton,
-        ],
+            loginButton,
+          ],
+        ),
       ),
     );
 

@@ -1,7 +1,7 @@
 import 'package:ecommerce_int2/app_properties.dart';
+import 'package:ecommerce_int2/screens/auth/signup_controller.dart';
 import 'package:flutter/material.dart';
-
-import 'forgot_password_page.dart';
+import 'package:get/get.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -10,12 +10,11 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final TextEditingController email = TextEditingController();
-  final TextEditingController password = TextEditingController();
-  final TextEditingController phoneno = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    final SignUpController controller = Get.put(SignUpController());
+
     Widget title = Text(
       'TransitHomes Student Accomodation',
       style: TextStyle(
@@ -48,17 +47,13 @@ class _RegisterPageState extends State<RegisterPage> {
         onTap: () {
           //Navigator.of(context)
           //   .push(MaterialPageRoute(builder: (_) => ForgotPasswordPage()));
-          if (_formKey.currentState?.validate() ?? false) {
-            // Form is valid, perform your actions here
-            // Access form fields using controllers (e.g., email.text, password.text)
+          if (_formKey.currentState!.validate()) {
+            SignUpController.instance.registerUser(
+                controller.email.text.trim(), controller.password.text.trim());
+            print('user created');
 
-            String phoneNo = phoneno.text;
-            String Email = email.text;
-            String Password = password.text;
-
-            print('Email: $Email');
-            print('Password: $Password');
-            print('Phone Number: $phoneNo');
+            /*print("The email is ${controller.email}");
+            print("The password is ${controller.password}");*/
           }
         },
         child: Container(
@@ -111,7 +106,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   Padding(
                     padding: const EdgeInsets.only(top: 8.0),
                     child: TextFormField(
-                      controller: email,
+                      controller: controller.email,
                       style: TextStyle(fontSize: 16.0),
                       decoration: InputDecoration(
                         labelText: 'Email', // Add a label if needed
@@ -128,7 +123,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   Padding(
                     padding: const EdgeInsets.only(top: 8.0),
                     child: TextFormField(
-                      controller: password,
+                      controller: controller.password,
                       style: TextStyle(fontSize: 16.0),
                       obscureText: true,
                       decoration: InputDecoration(
@@ -143,7 +138,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       },
                     ),
                   ),
-                  Padding(
+                  /*Padding(
                     padding: const EdgeInsets.only(top: 8.0),
                     child: TextFormField(
                       controller: phoneno,
@@ -160,7 +155,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         return null;
                       },
                     ),
-                  ),
+                  ),*/
                 ],
               ),
             ),
