@@ -127,7 +127,8 @@ class _RegisterPageState extends State<RegisterPage> {
                       style: TextStyle(fontSize: 16.0),
                       obscureText: true,
                       decoration: InputDecoration(
-                        labelText: 'Password', // Add a label if needed
+                        labelText: 'Password',
+                        // Add a label if needed
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -195,7 +196,7 @@ class _RegisterPageState extends State<RegisterPage> {
           Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('assets/bg-wallpaper.jpg'),
+                    image: AssetImage('assets/bg-login-2.png'),
                     fit: BoxFit.cover)),
           ),
           Container(

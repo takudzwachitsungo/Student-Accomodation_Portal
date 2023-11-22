@@ -10,25 +10,25 @@ class TrackingPage extends StatefulWidget {
 
 class _TrackingPageState extends State<TrackingPage> {
   final List<Location> locations = [
-    Location('Kolkata Facility', DateTime(2019, 6, 5, 5, 23, 4),
+    Location('Beatrice, Masvingo Road', DateTime(2019, 6, 5, 5, 23, 4),
         showHour: false, isHere: false, passed: true),
-    Location('Hyderabad Facility', DateTime(2019, 6, 6, 5, 23, 4),
+    Location('Mvuma', DateTime(2019, 6, 6, 5, 23, 4),
         showHour: false, isHere: false, passed: true),
     Location(
-      'Chennai Facility',
+      'Shamva District',
       DateTime(2019, 6, 9, 5, 23, 4),
       showHour: false,
       isHere: true,
     ),
     Location(
-      'Kerala Facility',
+      'Bindura Town',
       DateTime(2019, 6, 10, 5, 23, 4),
       showHour: true,
       isHere: false,
     ),
   ];
 
-  String selectedProduct = 'Boat Headphones Bass boost 100v';
+  String selectedProduct = 'Billboards';
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class _TrackingPageState extends State<TrackingPage> {
               elevation: 0.0,
               iconTheme: IconThemeData(color: Colors.grey),
               title: Text(
-                'Shipped',
+                'Delivered',
                 style: TextStyle(
                   color: darkGrey,
                   fontSize: 22,

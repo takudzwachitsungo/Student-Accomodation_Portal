@@ -61,17 +61,21 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
       left: MediaQuery.of(context).size.width / 4,
       bottom: 20,
       child: InkWell(
-        onTap: () {
+        onTap: () async {
           //Navigator.of(context)
           //  .push(MaterialPageRoute(builder: (_) => IntroPage()));
           if (_formKey.currentState!.validate()) {
-            /*LoginController.instance.login(
-                controller.email.text.trim(), controller.password.text.trim());
-            print('user created');*/
-
-            print("The email is ${controller.email}");
-            print("The password is ${controller.password}");
+            try {
+              await LoginController.instance.login();
+              print('user logged in');
+            } catch (e) {
+              // Handle login failure, display an error message, etc.
+              print('Login failed');
+            }
           }
+
+          //print("The email is ${controller.email}");
+          // print("The password is ${controller.password}");
         },
         child: Container(
           width: MediaQuery.of(context).size.width / 2,

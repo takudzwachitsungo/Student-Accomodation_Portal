@@ -1,5 +1,6 @@
 import 'package:ecommerce_int2/screens/auth/signup_email_passwordfailure.dart';
 import 'package:ecommerce_int2/screens/auth/welcome_back_page.dart';
+import 'package:ecommerce_int2/screens/intro_page.dart';
 //import 'package:ecommerce_int2/screens/auth/signup_controller.dart';
 import 'package:ecommerce_int2/screens/main/main_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -30,7 +31,7 @@ class AuthenticationService extends GetxController {
       await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       firebaseUser.value != null
-          ? Get.offAll(() => MainPage())
+          ? Get.offAll(() => IntroPage())
           : Get.offAll(() => WelcomeBackPage());
     } on FirebaseAuthException catch (e) {
       final ex = SignUpWithEmailAndPasswordFailure.code(e.code);
@@ -46,6 +47,10 @@ class AuthenticationService extends GetxController {
   Future<void> loginWithEmailAndPassword(String email, String password) async {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
+      print('Firebase user value: ${firebaseUser.value}');
+      firebaseUser.value != null
+          ? Get.offAll(() => IntroPage())
+          : Get.offAll(() => WelcomeBackPage());
     } on FirebaseAuthException catch (e) {
       final ex = SignUpWithEmailAndPasswordFailure.code(e.code);
       print('FIREBASE AUTH EXCEPTION - ${ex.message}');
