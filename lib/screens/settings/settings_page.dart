@@ -1,6 +1,7 @@
 import 'package:ecommerce_int2/app_properties.dart';
 import 'package:ecommerce_int2/custom_background.dart';
 import 'package:ecommerce_int2/screens/auth/welcome_back_page.dart';
+import 'package:ecommerce_int2/screens/main/features.dart';
 import 'package:ecommerce_int2/screens/settings/change_country.dart';
 import 'package:ecommerce_int2/screens/settings/change_password_page.dart';
 import 'package:ecommerce_int2/screens/settings/legal_about_page.dart';
@@ -111,6 +112,13 @@ class SettingsPage extends StatelessWidget {
                               onTap: () => Navigator.of(context).push(
                                   MaterialPageRoute(
                                       builder: (_) => WelcomeBackPage())),
+                            ),
+                            ListTile(
+                              title: Text('Dahboard'),
+                              leading: Image.asset('assets/icons/sign_out.png'),
+                              onTap: () => Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (_) => HomeScreen())),
                             ),
                           ],
                         ),

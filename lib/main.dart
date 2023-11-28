@@ -3,6 +3,7 @@ import 'package:ecommerce_int2/screens/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 //import 'package:get/get_core/src/get_main.dart';
 import 'firebase_options.dart';
 
@@ -18,16 +19,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'transithomes',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.light,
-        canvasColor: Colors.transparent,
-        primarySwatch: Colors.blue,
-        fontFamily: "Montserrat",
-      ),
-      home: SplashScreen(),
-    );
+    return Sizer(builder: (context, orientation, device) {
+      return GetMaterialApp(
+        title: 'transithomes',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          brightness: Brightness.light,
+          canvasColor: Colors.transparent,
+          primarySwatch: Colors.blue,
+          fontFamily: "Montserrat",
+        ),
+        home: SplashScreen(),
+      );
+    });
   }
 }

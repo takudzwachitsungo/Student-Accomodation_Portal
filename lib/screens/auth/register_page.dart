@@ -18,7 +18,7 @@ class _RegisterPageState extends State<RegisterPage> {
     Widget title = Text(
       'TransitHomes Student Accomodation',
       style: TextStyle(
-          color: Colors.white,
+          color: Color.fromARGB(255, 65, 3, 251),
           fontSize: 20.0,
           fontWeight: FontWeight.bold,
           shadows: [

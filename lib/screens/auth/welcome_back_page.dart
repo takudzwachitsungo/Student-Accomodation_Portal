@@ -59,7 +59,7 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
 
     Widget loginButton = Positioned(
       left: MediaQuery.of(context).size.width / 4,
-      bottom: 20,
+      bottom: 0,
       child: InkWell(
         onTap: () async {
           //Navigator.of(context)

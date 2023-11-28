@@ -10,29 +10,25 @@ class FaqPage extends StatefulWidget {
 class _FaqPageState extends State<FaqPage> {
   List<Panel> panels = [
     Panel(
-        'HOW CAN I CHANGE MY SHIPPING ADDRESS?',
-        'By default, the last used shipping address will be saved intoto your Sample Store account. When you are checkingout your order, the default shipping address will be displayedand you have the option to amend it if you need to.',
+        'WHERE ARE YOUR HOSTELS LOCATED',
+        'Generally, Transithomes has three hostels in Harare and one is in CBD and the other two are found in Mount Pleasent',
         false),
     Panel(
-        'HOW MANY FREE SAMPLES CAN I REDEEM?',
-        'Due to the limited quantity, each member`s account is only entitled to 1 unique free sample. You can check out up to 4 free samples in each checkout.',
+        'AMONG ALL HOSTELS WHICH ONE IS THE BEST?',
+        'All our hostels are a great place to stay, but if you are more information you may vist our website',
         false),
     Panel(
-        'HOW CAN I TRACK MY ORDERS & PAYMENT?',
-        'By default, the last used shipping address will be saved intoto your Sample Store account. When you are checkingout your order, the default shipping address will be displayedand you have the option to amend it if you need to.',
+        'HOW MUCH IS TO RENT?',
+        'Actually our rents differ with the location that you are renting.',
         false),
     Panel(
-        'HOW LONG WILL IT TAKE FOR MY ORDER TO ARRIVE AFTER I MAKE PAYMENT?',
-        'By default, the last used shipping address will be saved intoto your Sample Store account. When you are checkingout your order, the default shipping address will be displayedand you have the option to amend it if you need to.',
+        'HOW LONG DOES IT TAKE TO APPROVE ROOM AFTER BOOKING?',
+        'Your room will be approved the very same minute you book our rooms',
         false),
-    Panel(
-        'HOW DO YOU SHIP MY ORDERS?',
-        'By default, the last used shipping address will be saved intoto your Sample Store account. When you are checkingout your order, the default shipping address will be displayedand you have the option to amend it if you need to.',
-        false),
-    Panel(
-        'HOW DO I MAKE PAYMENTS USING PAYPAL? HOW DOES IT WORK?',
-        'By default, the last used shipping address will be saved intoto your Sample Store account. When you are checkingout your order, the default shipping address will be displayedand you have the option to amend it if you need to.',
-        false)
+    Panel('HOW GOOD ARE YOUR FACILITIES ON THE SCALE OF 1-10?',
+        'Our Services are super-quality we can quarantee you that', false),
+    Panel('HOW GOOD ARE YOUR FACILITIES ON THE SCALE OF 1-10?',
+        'Our Services are super-quality we can quarantee you that', false),
   ];
 
   @override

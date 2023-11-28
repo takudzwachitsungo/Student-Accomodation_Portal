@@ -35,6 +35,8 @@ dependencies:
   firebase_core: 2.22.0 
   firebase_auth: ^4.13.0
   get: ^4.6.6
+  sizer: ^2.0.15
+  google_fonts: ^6.1.0
 
 
 dev_dependencies:
