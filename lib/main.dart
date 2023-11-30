@@ -1,3 +1,4 @@
+import 'package:ecommerce_int2/routes.dart';
 import 'package:ecommerce_int2/screens/auth/auth_repository.dart';
 import 'package:ecommerce_int2/screens/splash_page.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
           fontFamily: "Montserrat",
         ),
         home: SplashScreen(),
+        routes: routes,
       );
     });
   }

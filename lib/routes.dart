@@ -9,7 +9,7 @@ import 'package:flutter/cupertino.dart';
 
 Map<String, WidgetBuilder> routes = {
   //all screens will be registered here like manifest in android
-  SplashScreen.routeName: (context) => SplashScreen(),
+  // SplashScreen.routeName: (context) => SplashScreen(),
   LoginScreen.routeName: (context) => LoginScreen(),
   HomeScreen.routeName: (context) => HomeScreen(),
   MyProfileScreen.routeName: (context) => MyProfileScreen(),

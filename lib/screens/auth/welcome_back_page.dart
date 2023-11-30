@@ -11,6 +11,9 @@ class WelcomeBackPage extends StatefulWidget {
 
 class _WelcomeBackPageState extends State<WelcomeBackPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final String emailPattern =
+      r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+
   @override
   Widget build(BuildContext context) {
     final LoginController controller = Get.put(LoginController());
@@ -67,6 +70,8 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
           if (_formKey.currentState!.validate()) {
             try {
               await LoginController.instance.login();
+              controller.email.clear();
+              controller.password.clear();
               print('user logged in');
             } catch (e) {
               // Handle login failure, display an error message, etc.
@@ -136,8 +141,11 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
                           //labelText: 'Email',
                           hintText: 'Email'),
                       validator: (value) {
+                        RegExp regExp = new RegExp(emailPattern);
                         if (value == null || value.isEmpty) {
                           return 'Please enter your email';
+                        } else if (!regExp.hasMatch(value)) {
+                          return 'Please enter a valid email address';
                         }
                         // Add more validation if needed
                         return null;
@@ -156,6 +164,8 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please enter your password';
+                        } else if (value.length < 6) {
+                          return 'Password must be more than 6 characters';
                         }
                         // Add more validation if needed
                         return null;

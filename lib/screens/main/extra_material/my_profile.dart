@@ -52,7 +52,7 @@ class MyProfileScreen extends StatelessWidget {
                         SizerUtil.deviceType == DeviceType.tablet ? 12.w : 13.w,
                     backgroundColor: kSecondaryColor,
                     backgroundImage:
-                        AssetImage('assets/images/student_profile.jpeg'),
+                        AssetImage('assets/student_profile.jpeg'),
                   ),
                   kWidthSizedBox,
                   Column(

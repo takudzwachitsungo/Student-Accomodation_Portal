@@ -7,9 +7,16 @@ class SignUpController extends GetxController {
 
   final email = TextEditingController();
   final password = TextEditingController();
-  final phoneno = TextEditingController();
+  final password_2 = TextEditingController();
 
-  void registerUser(String email, String password) {
+  void registerUser(String email, String password, String password_2) {
+    if (password != password_2) {
+      // Passwords don't match, handle this case (e.g., show an error message)
+      print('Passwords do not match');
+      // You can return or throw an error to handle this case as needed
+      return;
+    }
+
     AuthenticationService.instance
         .createUserWithEmailAndPassword(email, password);
   }

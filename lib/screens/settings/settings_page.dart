@@ -1,5 +1,6 @@
 import 'package:ecommerce_int2/app_properties.dart';
 import 'package:ecommerce_int2/custom_background.dart';
+import 'package:ecommerce_int2/screens/auth/auth_repository.dart';
 import 'package:ecommerce_int2/screens/auth/welcome_back_page.dart';
 import 'package:ecommerce_int2/screens/main/features.dart';
 import 'package:ecommerce_int2/screens/settings/change_country.dart';
@@ -12,6 +13,8 @@ import 'package:flutter/services.dart';
 import 'change_language_page.dart';
 
 class SettingsPage extends StatelessWidget {
+  final AuthenticationService authService = AuthenticationService.instance;
+
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
@@ -107,14 +110,22 @@ class SettingsPage extends StatelessWidget {
                                       builder: (_) => ChangePasswordPage())),
                             ),
                             ListTile(
-                              title: Text('Sign out'),
+                              title: Text('Logout'),
                               leading: Image.asset('assets/icons/sign_out.png'),
-                              onTap: () => Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                      builder: (_) => WelcomeBackPage())),
+                              onTap: () async {
+                                try {
+                                  await authService.logout();
+                                  print('logged out successfully');
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (_) => WelcomeBackPage()));
+                                } catch (e) {
+                                  // Handle any logout errors or exceptions here
+                                  print('Logout error: $e');
+                                }
+                              },
                             ),
                             ListTile(
-                              title: Text('Dahboard'),
+                              title: Text('Dashboard'),
                               leading: Image.asset('assets/icons/sign_out.png'),
                               onTap: () => Navigator.of(context).push(
                                   MaterialPageRoute(

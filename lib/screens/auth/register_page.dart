@@ -1,6 +1,7 @@
 import 'package:ecommerce_int2/app_properties.dart';
 import 'package:ecommerce_int2/screens/auth/signup_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -10,6 +11,8 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final String emailPattern =
+      r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +21,12 @@ class _RegisterPageState extends State<RegisterPage> {
     Widget title = Text(
       'TransitHomes Student Accomodation',
       style: TextStyle(
-          color: Color.fromARGB(255, 65, 3, 251),
+          color: Color.fromARGB(255, 218, 218, 229),
           fontSize: 20.0,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w900,
           shadows: [
             BoxShadow(
-              color: Color.fromRGBO(0, 0, 0, 0.15),
+              color: Color.fromRGBO(19, 19, 19, 0.50),
               offset: Offset(0, 5),
               blurRadius: 10.0,
             )
@@ -33,9 +36,9 @@ class _RegisterPageState extends State<RegisterPage> {
     Widget subTitle = Padding(
         padding: const EdgeInsets.only(right: 56.0),
         child: Text(
-          'Create your new account here',
+          'Create your account here',
           style: TextStyle(
-            color: Colors.white,
+            color: Color.fromARGB(255, 241, 181, 181),
             fontSize: 16.0,
           ),
         ));
@@ -49,7 +52,12 @@ class _RegisterPageState extends State<RegisterPage> {
           //   .push(MaterialPageRoute(builder: (_) => ForgotPasswordPage()));
           if (_formKey.currentState!.validate()) {
             SignUpController.instance.registerUser(
-                controller.email.text.trim(), controller.password.text.trim());
+                controller.email.text.trim(),
+                controller.password.text.trim(),
+                controller.password_2.text.trim());
+            controller.email.clear();
+            controller.password.clear();
+            controller.password_2.clear();
             print('user created');
 
             /*print("The email is ${controller.email}");
@@ -112,8 +120,11 @@ class _RegisterPageState extends State<RegisterPage> {
                         labelText: 'Email', // Add a label if needed
                       ),
                       validator: (value) {
+                        RegExp regExp = new RegExp(emailPattern);
                         if (value == null || value.isEmpty) {
                           return 'Please enter your email';
+                        } else if (!regExp.hasMatch(value)) {
+                          return 'Please enter a valid email address';
                         }
                         // Add more validation if needed
                         return null;
@@ -133,30 +144,35 @@ class _RegisterPageState extends State<RegisterPage> {
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please enter your password';
+                        } else if (value.length < 6) {
+                          return 'Password must be more than 6 characters';
                         }
                         // Add more validation if needed
                         return null;
                       },
                     ),
                   ),
-                  /*Padding(
+                  Padding(
                     padding: const EdgeInsets.only(top: 8.0),
                     child: TextFormField(
-                      controller: phoneno,
+                      controller: controller.password_2,
                       style: TextStyle(fontSize: 16.0),
-                      obscureText: false,
+                      obscureText: true,
                       decoration: InputDecoration(
-                        labelText: 'Phone Number', // Add a label if needed
+                        labelText: 'Confirm Password',
+                        // Add a label if needed
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter your phone number';
+                          return 'Please enter your password';
+                        } else if (value.length < 6) {
+                          return 'Password must be more than 6 characters';
                         }
                         // Add more validation if needed
                         return null;
                       },
                     ),
-                  ),*/
+                  ),
                 ],
               ),
             ),
@@ -171,20 +187,29 @@ class _RegisterPageState extends State<RegisterPage> {
         Text(
           'You can sign in with',
           style: TextStyle(
-              fontSize: 12.0, fontStyle: FontStyle.italic, color: Colors.white),
+              fontSize: 16.0, fontStyle: FontStyle.italic, color: Colors.white),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             IconButton(
-              icon: Icon(Icons.find_replace),
+              icon: SvgPicture.network(
+                'https://fonts.gstatic.com/s/i/productlogos/googleg/v6/24px.svg',
+                width: 100,
+                height: 100,
+              ),
               onPressed: () {},
-              color: Colors.white,
+              //color: Colors.white,
             ),
             IconButton(
-                icon: Icon(Icons.find_replace),
-                onPressed: () {},
-                color: Colors.white),
+              icon: SvgPicture.asset(
+                'assets/icons/icons8-facebook.svg',
+                width: 100,
+                height: 100,
+              ),
+              onPressed: () {},
+              //color: Colors.white
+            ),
           ],
         )
       ],
@@ -201,7 +226,7 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
           Container(
             decoration: BoxDecoration(
-              color: Color.fromRGBO(0, 0, 0, 0.5),
+              color: Color.fromRGBO(0, 0, 0, 0.7),
             ),
           ),
           Padding(
