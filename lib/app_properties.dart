@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 const Color yellow = Color(0xffFDC054);
 const Color primaryColor = Color.fromARGB(255, 51, 21, 134);
-const Color mediumBlue = Color.fromARGB(255, 53, 36, 98);
+const Color mediumBlue = Color.fromARGB(255, 81, 58, 145);
+const Color blueWhite = Color.fromARGB(255, 168, 144, 238);
 const Color secondaryColor = Color.fromARGB(255, 211, 27, 36);
 const Color mediumYellow = Color(0xffFDB846);
 const Color darkYellow = Color(0xffE99E22);
