@@ -1,4 +1,5 @@
 import 'package:ecommerce_int2/constants.dart';
+import 'package:ecommerce_int2/models/product.dart';
 import 'extra_material/assignment_screen.dart';
 import 'extra_material/datesheet_screen.dart';
 import 'extra_material/fee_screen.dart';
@@ -7,6 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 import 'extra_material/student_data.dart';
+
+List<Product> products = [
+  Product('assets/kitchen-1.jpg', 'Weekly Dose', /*'Bag'*/ 'Beautiful bag',
+      2.33, Icons.article),
+  Product('assets/bed-2.jpg', 'Bookings' /*'Cap'*/, 'Cap with beautiful design',
+      10, Icons.hotel),
+];
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);

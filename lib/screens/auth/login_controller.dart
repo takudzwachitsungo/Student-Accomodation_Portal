@@ -9,13 +9,13 @@ class LoginController extends GetxController {
   final email = TextEditingController();
   final password = TextEditingController();
 
-  @override
+  /*@override
   void onClose() {
     // Dispose of controllers when the LoginController is closed
     email.dispose();
     password.dispose();
     super.onClose();
-  }
+  }*/
 
   /// TextField Validation
 
