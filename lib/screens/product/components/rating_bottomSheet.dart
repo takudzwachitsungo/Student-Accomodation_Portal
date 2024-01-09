@@ -32,13 +32,13 @@ class _RatingBottomSheetState extends State<RatingBottomSheet> {
                     shape: BoxShape.circle,
                     boxShadow: shadow,
                     border: Border.all(width: 8.0, color: Colors.white)),
-                child: Image.asset('assets/headphones.png'),
+                child: Image.asset('assets/bg-login-2.png'),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
                     horizontal: 72.0, vertical: 16.0),
                 child: Text(
-                  'Boat Rockerz 350 On-Ear Bluetooth Headphones',
+                  'Students Comments',
                   style: TextStyle(fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),

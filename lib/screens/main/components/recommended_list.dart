@@ -1,24 +1,28 @@
 import 'package:ecommerce_int2/app_properties.dart';
 import 'package:ecommerce_int2/models/product.dart';
-import 'package:ecommerce_int2/screens/product/product_page.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_int2/screens/main/features.dart';
 
 class RecommendedList extends StatelessWidget {
   List<Product> products = [
-    Product('assets/kitchen-1.jpg', 'Weekly Dose', /*'Bag'*/ 'Beautiful bag',
+    Product('assets/kitchen-1.jpg', 'Campus Updates', /*'Bag'*/ 'Beautiful bag',
         2.33, Icons.article),
-    Product('assets/bed-2.jpg', 'Bookings' /*'Cap'*/,
+    Product('assets/bed-2.jpg', 'Students Housing Tips' /*'Cap'*/,
         'Cap with beautiful design', 10, Icons.hotel),
-    Product('assets/jeans_1.png', /*'Cap'*/ 'Lost and Found', 'Jeans for you',
-        20, Icons.widgets),
-    Product('assets/womanshoe_3.png', 'Cart' /*'Woman Shoes'*/,
-        'Shoes with special discount', 30, Icons.shopping_cart),
-    Product('assets/bag_10.png', 'Payment',
+    Product('assets/jeans_1.png', /*'Cap'*/ 'Local Community News',
+        'Jeans for you', 20, Icons.widgets),
+    Product(
+        'assets/womanshoe_3.png',
+        'Accommodation Insights' /*'Woman Shoes'*/,
+        'Shoes with special discount',
+        30,
+        Icons.shopping_cart),
+    Product('assets/bag_10.png', 'General Tips',
         /*'Bag Express'*/ 'Bag for your shops', 40, Icons.payment),
     //Product('assets/jeans_3.png', 'Jeans', 'Beautiful Jeans', 102.33),
-    Product('assets/ring_1.png', 'Events', 'Description', 52.33, Icons.article),
+    Product('assets/ring_1.png', 'Events and Workshops', 'Description', 52.33,
+        Icons.article),
     //Product('assets/shoeman_7.png', 'Shoes', 'Description', 62.33),
     //Product('assets/headphone_9.png', 'Headphones', 'Description', 72.33),
   ];

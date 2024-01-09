@@ -88,7 +88,7 @@ class _CategoryListPageState extends State<CategoryListPage> {
               padding: EdgeInsets.symmetric(horizontal: 16.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(5)),
-                color: Colors.white,
+                color: Color.fromARGB(255, 150, 159, 171),
               ),
               child: TextField(
                 controller: searchController,

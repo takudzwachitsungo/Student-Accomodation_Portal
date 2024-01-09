@@ -9,17 +9,16 @@ import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 import 'extra_material/student_data.dart';
 
-List<Product> products = [
-  Product('assets/kitchen-1.jpg', 'Weekly Dose', /*'Bag'*/ 'Beautiful bag',
-      2.33, Icons.article),
-  Product('assets/bed-2.jpg', 'Bookings' /*'Cap'*/, 'Cap with beautiful design',
-      10, Icons.hotel),
-];
-
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
   static String routeName = 'HomeScreen';
 
+  List<Product> products = [
+    Product('assets/kitchen-1.jpg', 'Weekly Dose', /*'Bag'*/ 'Beautiful bag',
+        2.33, Icons.article),
+    Product('assets/bed-2.jpg', 'Bookings' /*'Cap'*/,
+        'Cap with beautiful design', 10, Icons.hotel),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,13 +40,12 @@ class HomeScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         StudentName(
-                          studentName: 'Aisha',
+                          studentName: 'Primrose',
                         ),
                         kHalfSizedBox,
-                        StudentClass(
-                            studentClass: 'Class X-II A | Roll no: 12'),
+                        StudentClass(studentClass: 'Roll no: 12'),
                         kHalfSizedBox,
-                        StudentYear(studentYear: '2020-2021'),
+                        StudentYear(studentYear: '2023-2024'),
                       ],
                     ),
                     kHalfSizedBox,
@@ -61,25 +59,27 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 sizedBox,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    StudentDataCard(
-                      onPress: () {
-                        //go to attendance screen
-                      },
-                      title: 'Attendance',
-                      value: '90.02%',
-                    ),
-                    StudentDataCard(
-                      onPress: () {
-                        //go to fee due screen
-                        Navigator.pushNamed(context, FeeScreen.routeName);
-                      },
-                      title: 'Fees Due',
-                      value: '600\$',
-                    ),
-                  ],
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      StudentDataCard(
+                        onPress: () {
+                          //go to attendance screen
+                        },
+                        title: 'Attendance',
+                        value: '90.02%',
+                      ),
+                      StudentDataCard(
+                        onPress: () {
+                          //go to fee due screen
+                          Navigator.pushNamed(context, FeeScreen.routeName);
+                        },
+                        title: 'Fees Due',
+                        value: '600\$',
+                      ),
+                    ],
+                  ),
                 )
               ],
             ),
@@ -104,7 +104,7 @@ class HomeScreen extends StatelessWidget {
                         HomeCard(
                           onPress: () {},
                           icon: 'assets/icons/quiz.svg',
-                          title: 'Take Quiz',
+                          title: 'Weekly Dose',
                         ),
                         HomeCard(
                           onPress: () {
@@ -113,7 +113,7 @@ class HomeScreen extends StatelessWidget {
                                 context, AssignmentScreen.routeName);
                           },
                           icon: 'assets/icons/assignment.svg',
-                          title: 'Assignments',
+                          title: 'Bookings',
                         ),
                       ],
                     ),
@@ -123,12 +123,12 @@ class HomeScreen extends StatelessWidget {
                         HomeCard(
                           onPress: () {},
                           icon: 'assets/icons/holiday.svg',
-                          title: 'Holidays',
+                          title: 'Events',
                         ),
                         HomeCard(
                           onPress: () {},
                           icon: 'assets/icons/timetable.svg',
-                          title: 'Time Table',
+                          title: 'Payment',
                         ),
                       ],
                     ),
@@ -138,7 +138,7 @@ class HomeScreen extends StatelessWidget {
                         HomeCard(
                           onPress: () {},
                           icon: 'assets/icons/result.svg',
-                          title: 'Result',
+                          title: 'Chatroom',
                         ),
                         HomeCard(
                           onPress: () {
@@ -225,7 +225,7 @@ class HomeCard extends StatelessWidget {
         width: 40.w,
         height: 20.h,
         decoration: BoxDecoration(
-          color: kPrimaryColor,
+          color: newkPrimaryColor,
           borderRadius: BorderRadius.circular(kDefaultPadding / 2),
         ),
         child: Column(
@@ -241,8 +241,11 @@ class HomeCard extends StatelessWidget {
             Text(
               title,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.titleSmall,
-            ),
+              style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                  color: newkTextBlackColor,
+                  fontSize: 10.sp,
+                  fontWeight: FontWeight.bold),
+            )
           ],
         ),
       ),

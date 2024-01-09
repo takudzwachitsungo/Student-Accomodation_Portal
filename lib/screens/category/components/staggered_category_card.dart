@@ -1,3 +1,4 @@
+import 'package:ecommerce_int2/screens/product/components/rating_bottomSheet.dart';
 import 'package:flutter/material.dart';
 
 class CategoryCard extends StatelessWidget {
@@ -81,9 +82,15 @@ class CategoryCard extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(24))),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                child: Text(
-                  'View more',
-                  style: TextStyle(color: end, fontWeight: FontWeight.bold),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (_) => RatingBottomSheet()));
+                  },
+                  child: Text(
+                    'View more',
+                    style: TextStyle(color: end, fontWeight: FontWeight.bold),
+                  ),
                 ),
               )
             ],

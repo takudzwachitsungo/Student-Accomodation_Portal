@@ -85,9 +85,9 @@ class StudentDataCard extends StatelessWidget {
       onTap: onPress,
       child: Container(
         width: 42.w,
-        height: 12.h,
+        height: 15.h,
         decoration: BoxDecoration(
-          color: kOtherColor,
+          color: newkGreyColor,
           borderRadius: BorderRadius.circular(kDefaultPadding),
         ),
         child: Column(
@@ -96,13 +96,13 @@ class StudentDataCard extends StatelessWidget {
             Text(
               title,
               style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                    color: kTextBlackColor,
+                    color: kTextWhiteColor,
                   ),
             ),
             Text(
               value,
               style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                    color: kTextLightColor,
+                    color: newkPrimaryColor,
                   ),
             ),
           ],

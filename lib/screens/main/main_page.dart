@@ -62,6 +62,14 @@ class _MainPageState extends State<MainPage>
               onPressed: () => Navigator.of(context)
                   .push(MaterialPageRoute(builder: (_) => NotificationsPage())),
               icon: Icon(Icons.notifications)),
+          Text(
+            'Hi Tinotenda 👋',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                fontSize: 25.0,
+                color: primaryColor,
+                fontWeight: FontWeight.bold),
+          ),
           IconButton(
               onPressed: () => Navigator.of(context)
                   .push(MaterialPageRoute(builder: (_) => SearchPage())),
@@ -167,8 +175,8 @@ class _MainPageState extends State<MainPage>
       tabs: [
         Tab(text: 'Trending News'),
         Tab(text: 'Bookings'),
-        Tab(text: 'Headsets'),
-        Tab(text: 'Wireless'),
+        Tab(text: 'Housing Options'),
+        Tab(text: 'Residence Essentials'),
         Tab(text: 'Chatroom'),
       ],
       labelStyle: TextStyle(fontSize: 18.0),
